@@ -1,0 +1,11 @@
+[Unit]
+Description=start docker's jenkins and gerrit
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=forked
+ExecStart=/bin/bash /usr/bin/containers.sh
+
+[Install]
+WantedBy=multi-user.target
